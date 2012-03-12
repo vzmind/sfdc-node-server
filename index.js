@@ -1,10 +1,12 @@
+// Include the MVC modules
 var server = require("./server");
 var router = require("./router");
 var requestHandlers = require("./requestHandler");
 
+// Your routes are defined here:
 var handle = {}
 handle["/"] = requestHandlers.start;
-handle["/start"] = requestHandlers.start;
-handle["/upload"] = requestHandlers.upload;
+handle["/get"] = requestHandlers.get;
 
+// Start the server
 server.start(router.route,handle);
